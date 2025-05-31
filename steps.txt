@@ -1,0 +1,29 @@
+1. Create a new directory for your project:
+    mkdir memory-game
+    cd memory-game
+
+
+3. Install TypeScript and necessary types:
+    npm install --save-dev typescript @types/node
+
+4. Initialize a TypeScript configuration file:
+    npx tsc --init
+
+5. Create a `src` directory for your source code:
+    mkdir src
+
+6. Add your TypeScript files in the `src` directory (e.g., `src/index.ts`).
+
+7. Update your `tsconfig.json` to set `"outDir": "./dist"` and `"rootDir": "./src"`.
+
+8. Add build and start scripts to your `package.json`:
+    "scripts": {
+      "build": "tsc",
+      "start": "node dist/index.js"
+    }
+
+9. Build your project:
+    npm run build
+
+10. Run your project:
+     npm start
