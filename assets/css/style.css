@@ -1,9 +1,9 @@
 body {
-    background-image: url(../brain.jfif);
-    background-size: cover;
+    background-image: url(../images/brain.jpg);
     background-position: center;
-    background-repeat: no-repeat;
+    background-repeat: repeat-x;
     background-attachment: fixed;
+    background-clip: padding-box;
     color: white;
     height: 100vh;
 }
