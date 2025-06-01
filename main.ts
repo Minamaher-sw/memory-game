@@ -139,3 +139,32 @@ for(let counter:number=0; counter < (numberOfCards / 2); counter++){
 }
 //sorting assending 
 prepare.cards.sort((a, b) => a.id > b.id ? 1 : -1);
+
+prepare.cards.forEach((item, index) => {
+    cardsHtmlContent += `
+    <div class="col-sm-3 col-lg-2">
+        <!-- Card Flip -->
+        <div onclick="toggleFlip(${index})" class="card-flip">
+            <div id="card-flip-${index}">
+                <div class="front">
+                    <!-- front content -->
+                    <div class="card">
+                        <img class="card-image" src="./assets/back.jpg" alt="Loading...">
+                        <span class="card-content">${index + 1}</span>
+                    </div>
+                </div>
+                <div class="back">
+                    <!-- back content -->
+                    <div class="card">
+                        <img src="./assets/images/${item.index}.jpg" alt="Image [100%x180]" data-holder-rendered="true"
+                            style="height: 120px; width: 100%; display: block;">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Card Flip -->
+    </div>
+    `;
+});
+
+document.getElementById("cards").innerHTML =cardsHtmlContent;
