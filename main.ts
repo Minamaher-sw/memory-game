@@ -51,8 +51,46 @@ const toggleFlib =(index:number):void=>{
 const flib =(card:ICard ,index:number):void=>{
     prepare.flipAudio.play();
     if(card){
-        card.flib =card.flib ==="" ?'flib':"";
+        card.flib = card.flib ==="" ?'flib':"";
         document.getElementById(`card-flib-${index}`).classList.value =card.flib;
+    }
+}
+
+const selectCard =(card:ICard ,index:number):void=>{
+    if(!prepare.selectedCard_1){
+        prepare.selectedCard_1 =card;
+        prepare.selectedIndex_1 =index;
+    }
+    else if(!prepare.selectedCard_2){
+        prepare.selectedCard_2 =card;
+        prepare.selectedIndex_2 =index;
+    }
+    // checking 
+    if(prepare.selectedCard_1 && prepare.selectedCard_2)
+    {
+        if(prepare.selectedCard_1.src === prepare.selectedCard_2.src ){
+
+            prepare.selectedCard_1.clickable =false;
+            prepare.selectedCard_2.clickable =false;
+            prepare.selectedCard_1 =null;
+            prepare.selectedCard_2 =null;
+            stopAudio(prepare.failAudio);
+            stopAudio(prepare.goodAudio)
+            prepare.goodAudio.play();
+            changeProgrss();
+            checkFinish();
+        }
+        else{
+            setTimeout(()=>{
+                stopAudio(prepare.failAudio);
+                stopAudio(prepare.goodAudio);
+                prepare.failAudio.play();
+                flib(prepare.selectedCard_1,prepare.selectedIndex_1);
+                flib(prepare.selectedCard_2,prepare.selectedIndex_2);
+                prepare.selectedCard_1 =null;
+                prepare.selectedCard_2 =null;
+            },1000)
+        }
     }
 }
 
