@@ -1,7 +1,7 @@
 export interface ICard {
-    id: string,
+    id: number,
     src: string,
-    flib: boolean,
+    flib: string,
     clickable: boolean,
     index ?: number,
 }

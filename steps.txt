@@ -23,7 +23,7 @@
     }
 
 9. Build your project:
-    npm run build
+    npm run 
 
 10. Run your project:
      npm start

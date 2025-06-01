@@ -31,7 +31,7 @@ const getRandomInit = (min, max) => {
     }
     return result;
 };
-const toggleFlib = (index) => {
+const toggleFlip = (index) => {
     prepare.fullTrack.play();
     const card = prepare.cards[index];
     if (!card.flib && card.clickable) {
@@ -42,8 +42,8 @@ const toggleFlib = (index) => {
 const flib = (card, index) => {
     prepare.flipAudio.play();
     if (card) {
-        card.flib = card.flib === "" ? 'flib' : "";
-        document.getElementById(`card-flib-${index}`).classList.value = card.flib;
+        card.flib = card.flib === "" ? 'flip' : "";
+        document.getElementById(`card-flip-${index}`).classList.value = card.flib;
     }
 };
 const selectCard = (card, index) => {
@@ -118,6 +118,7 @@ for (let counter = 0; counter < (numberOfCards / 2); counter++) {
         clickable: true,
         index: counter,
     });
+    console.log(prepare.cards);
 }
 //sorting assending 
 prepare.cards.sort((a, b) => a.id > b.id ? 1 : -1);
@@ -148,4 +149,3 @@ prepare.cards.forEach((item, index) => {
     `;
 });
 document.getElementById("cards").innerHTML = cardsHtmlContent;
-export {};
