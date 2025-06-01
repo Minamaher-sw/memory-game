@@ -117,3 +117,25 @@ const stopAudio=(audio:HTMLAudioElement)=>{
         audio.currentTime=0;
     }
 }
+//#endregion
+
+//#region Game Logic
+for(let counter:number=0; counter < (numberOfCards / 2); counter++){
+
+    prepare.cards.push({
+    id: getRandomInit(0 ,numberOfCards),
+    src: `./assets/images/${counter}.jbg`,
+    flib: "",
+    clickable: true,
+    index:counter,
+    })
+    prepare.cards.push({
+    id: getRandomInit(0 ,numberOfCards),
+    src: `./assets/images/${counter}.jbg`,
+    flib: "",
+    clickable: true,
+    index:counter,
+    })
+}
+//sorting assending 
+prepare.cards.sort((a, b) => a.id > b.id ? 1 : -1);
