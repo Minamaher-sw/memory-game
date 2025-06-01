@@ -94,3 +94,9 @@ const selectCard =(card:ICard ,index:number):void=>{
     }
 }
 
+const changeProgrss =()=>{
+    const progress =(prepare.cards.filter(card => !card.clickable).length / numberOfCards)*100;
+    const preogressElement = document.getElementById("progress");
+    preogressElement.style.width =`${progress}%`
+    preogressElement.innerText =`${progress}%`
+}
