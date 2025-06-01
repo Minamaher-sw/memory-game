@@ -48,3 +48,11 @@ const toggleFlib =(index:number):void=>{
         selectCard(card,index);
     }
 }
+const flib =(card:ICard ,index:number):void=>{
+    prepare.flipAudio.play();
+    if(card){
+        card.flib =card.flib ==="" ?'flib':"";
+        document.getElementById(`card-flib-${index}`).classList.value =card.flib;
+    }
+}
+
