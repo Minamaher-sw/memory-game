@@ -20,3 +20,21 @@ const tempNumbers=[];
 // html  especial to card
 let cardsHtmlContent="";
 //#endregion
+
+//#region  function deleration 
+const getRandomInit=(min,max)=>
+{
+    let result:number;
+    let exists:boolean=true;
+    min =Math.ceil(min);
+    max= Math.floor(max);
+
+    while(exists){
+        result =Math.floor(Math.random()*(max -min +1))+min;
+        if(!tempNumbers.find( num => num === result.toString())){
+            exists =false;
+            tempNumbers.push(result.toString())
+        }
+    }
+    return result;
+}
