@@ -22,7 +22,7 @@ let cardsHtmlContent="";
 //#endregion
 
 //#region  function deleration 
-const getRandomInit=(min,max)=>
+const getRandomInit=(min:number,max:number):number=>
 {
     let result:number;
     let exists:boolean=true;
@@ -37,4 +37,14 @@ const getRandomInit=(min,max)=>
         }
     }
     return result;
+}
+
+const toggleFlib =(index:number):void=>{
+    prepare.fullTrack.play();
+    const card:ICard =prepare.cards[index];
+
+    if(!card.flib && card.clickable){
+        flib(card ,index);
+        selectCard(card,index);
+    }
 }
