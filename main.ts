@@ -100,3 +100,12 @@ const changeProgrss =()=>{
     preogressElement.style.width =`${progress}%`
     preogressElement.innerText =`${progress}%`
 }
+
+const checkFinish =()=>{
+    if(prepare.cards.filter(card => !card.clickable).length == numberOfCards){
+        stopAudio(prepare.failAudio);
+        stopAudio(prepare.goodAudio);
+        stopAudio(prepare.fullTrack);
+        prepare.gameOverAudio.play();
+    }
+}
