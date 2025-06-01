@@ -109,3 +109,11 @@ const checkFinish =()=>{
         prepare.gameOverAudio.play();
     }
 }
+
+const stopAudio=(audio:HTMLAudioElement)=>{
+    if(audio && audio.play)
+    {
+        audio.pause;
+        audio.currentTime=0;
+    }
+}
