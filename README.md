@@ -4,6 +4,7 @@ MaharaTeck Typescript Final project ( Memory Game )
  Memory Game - TypeScript
 A simple memory matching game built with TypeScript, HTML, and CSS. This project is part of the learnin https://maharatech.gov.eg/course/view.php?id=976.
 
+live demo :https://minamaher-sw.github.io/memory-game/
 🚀 Features
     Match pairs of cards by memory
     Score tracking
